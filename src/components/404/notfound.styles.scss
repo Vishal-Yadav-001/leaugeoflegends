@@ -1,0 +1,14 @@
+@import '../../styles/variables.styles.scss';
+.not_found_banner{
+    background-color: $neutral;
+    min-width: 98vw;
+    min-height: 95vh;
+    text-align: center;
+}
+.title{
+    color: $neutral;
+    
+}
+.error_image{
+    width:50%;
+}

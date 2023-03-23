@@ -1,0 +1,28 @@
+@import '../../styles/variables.styles.scss';
+.MuiToolbar-regular {
+  background-color: $secondary;
+  height: 4rem;
+}
+.list_container {
+  width: 100%;
+  display: flex;
+}
+.MuiListItem-root.list_item_1 {
+  width: 50%;
+  justify-content: start;
+}
+.MuiListItem-root.list_item_2 {
+  width: 50%;
+  justify-content: end;
+}
+.MuiListItem-root.list_item_1 h3 {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  color: $neutral;
+}
+.logo {
+  width: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+.badge .MuiBadge-badge{
+  background-color: $accent;
+  color: $black;
+}

@@ -1,0 +1,53 @@
+@import '../../styles/variables.styles.scss';
+#heros_count,#heros_ordering {
+    color:$neutral;
+    :hover,:focus{
+        color:$neutral;
+    }
+   
+}
+.MuiInputBase-root.MuiOutlinedInput-root.heros_dropdown, :hover{
+    fieldset.MuiOutlinedInput-notchedOutline.MuiOutlinedInput-notchedOutline {
+        border-color:  $neutral;
+        }
+        .MuiList-root.MuiList-padding.MuiMenu-list{
+color: $secondary
+        }
+};
+.MuiInputBase-root.MuiOutlinedInput-root.heros_dropdown {
+   color: $accent
+};
+
+.MuiIconButton-root.settings_icon{
+    .MuiSvgIcon-root{
+        color:$neutral;
+        margin-left: 1rem;
+    }
+   
+}
+
+
+.grouped_heros.MuiAutocomplete-root.MuiAutocomplete-hasPopupIcon {
+    padding:1rem;
+    width:30%;
+    color:$neutral;
+    .MuiFormLabel-root{
+        color:$neutral;
+    }
+    .MuiInputBase-input{
+        color:$accent;
+    }
+    .MuiButtonBase-root {
+        color:$accent;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .grouped_heros.MuiAutocomplete-root.MuiAutocomplete-hasPopupIcon {
+        padding:1rem;
+    width:100%;
+    color:$neutral;
+    }
+
+}

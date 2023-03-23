@@ -1,0 +1,13 @@
+@import '../../styles/variables.styles.scss';
+.MuiLinearProgress-root.MuiLinearProgress-determinate{
+    height:10px;
+    border-radius: 50px;
+    width:100%;
+    background-color: $primary;
+}
+.MuiLinearProgress-bar.MuiLinearProgress-barColorPrimary{
+    height:10px;
+    border-radius: 50px;
+    width:100%;
+    background-color: $accent;
+}

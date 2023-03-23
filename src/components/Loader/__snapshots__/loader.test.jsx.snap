@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Loader <Loader/>Snapshot 1`] = `
+<span
+  className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate progress css-eglki6-MuiLinearProgress-root"
+  data-testid="loader"
+  role="progressbar"
+>
+  <span
+    className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate css-5ir5xx-MuiLinearProgress-bar1"
+    style={Object {}}
+  />
+  <span
+    className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar2Indeterminate css-1r8wrcl-MuiLinearProgress-bar2"
+    style={Object {}}
+  />
+</span>
+`;

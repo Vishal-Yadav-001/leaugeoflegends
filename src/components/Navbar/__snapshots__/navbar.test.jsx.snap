@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar/> snapshot 1`] = `
+<header
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+  >
+    <ul
+      className="MuiList-root MuiList-padding list_container css-h4y409-MuiList-root"
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters MuiListItem-padding list_item_1 css-1p823my-MuiListItem-root"
+        disabled={false}
+      >
+        <button
+          aria-label="Home"
+          aria-labelledby={null}
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium home css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+          data-mui-internal-clone-element={true}
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          placeholder="bottom"
+          tabIndex={0}
+          type="button"
+        >
+          <img
+            alt="logo"
+            className="logo"
+            src="swords.png"
+          />
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <h3>
+          Game Store
+        </h3>
+      </li>
+      <li
+        className="MuiListItem-root MuiListItem-gutters MuiListItem-padding list_item_2 css-1p823my-MuiListItem-root"
+        disabled={false}
+      >
+        <button
+          aria-label="Watchlist"
+          aria-labelledby={null}
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium watchlist css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+          data-mui-internal-clone-element={true}
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          placeholder="bottom"
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiBadge-root badge BaseBadge-root css-1c32n2y-MuiBadge-root"
+          >
+            <img
+              alt="watch list"
+              className="logo"
+              src="bookmark.png"
+            />
+            <span
+              className="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary BaseBadge-badge BaseBadge-invisible css-1pi4uwz-MuiBadge-badge"
+            />
+          </span>
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+`;

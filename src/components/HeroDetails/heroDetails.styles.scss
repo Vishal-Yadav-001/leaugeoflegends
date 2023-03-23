@@ -1,0 +1,56 @@
+@import "../../styles/variables.styles.scss";
+.MuiBox-root.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $primary;
+  opacity: 0.9;
+}
+
+.MuiCard-root.hero_container {
+  opacity: 0.9;
+  background-color: $black;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+}
+
+.MuiCardContent-root img.hero_full_image {
+  width: clamp(3rem, 40vw, 12rem);
+}
+
+.MuiCardContent-root .MuiBox-root .specs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $neutral;
+ // width: clamp(3rem, 40vw, 12rem);
+}
+.MuiCardContent-root .MuiBox-root .specs .MuiTypography-root {
+ font-size: .8rem;
+ font-weight: 400;
+
+}
+.logo {
+  // width: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+.MuiIconButton-root.icon {
+  color: $accent;
+  margin-left: 1rem;
+}
+.specs_container {
+  padding-bottom: 0.5rem;
+}
+.MuiCardContent-root.description {
+  text-align: left;
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 1rem;
+
+}
+.MuiSkeleton-root.heading{
+  background-color: $accent;
+  height:25rem;
+  width:60vh;
+}

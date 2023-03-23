@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Heros List/herosList.component.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Heros List/herosList.component.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {
+  RemoveRedEye,
+} from "@mui/icons-material";
+import {
+  Badge,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  IconButton,
+  Tooltip,
+  Typography,
+  Zoom,
+} from "@mui/material";
+import { Box } from "@mui/system";
+import React, { Fragment, useContext, useState } from "react";
+import { HerosContext } from "../../context/heroscontext";
+import HeroDetails from "../HeroDetails/heroDetails.component";
+import "./herosList.styles.scss";
+/**
+ * Displays a list of Heros to user.
+ * @param {Array.&lt;Object>} heroList - list of hero records.
+ *
+ */
+const HerosList = ({ herosList,orderBy }) => {
+  const [selectedHero, setSelectedHero] = useState("");
+  const [open, setOpen] = useState(false);
+  const {addHero,checkIsHeroPresent, handleRemoveRecord,} = useContext(HerosContext);
+  return (
+    &lt;Fragment>
+      &lt;Container className="herosList">
+        &lt;Box
+          sx={{
+            display: { lg: "flex", md: "flex", sm: "flex", xs: "flex" },
+            flexWrap: "wrap",
+          }}
+        >
+          {herosList?.map((data) => {
+            return (
+              &lt;Card key={data?.id} className="hero_list">
+                &lt;CardActions  className="card_actions">
+                  &lt;Tooltip
+                    TransitionComponent={Zoom}
+                    title={`Armor ${data?.armor}`}
+                    placement="bottom"
+                  >
+                    &lt;IconButton>
+                      &lt;img
+                        alt="armor"
+                        className="logo armor"
+                        src={require("../../assets/armor.png")}
+                      >&lt;/img>
+                    &lt;/IconButton>
+                  &lt;/Tooltip>
+                  &lt;Tooltip
+                    TransitionComponent={Zoom}
+                    title={`Damage ${data?.attackdamage}`}
+                    placement="bottom"
+                  >
+                    &lt;IconButton>
+                      &lt;img
+                        alt="damage"
+                        className="logo damage"
+                        src={require("../../assets/bandage.png")}
+                      >&lt;/img>
+                    &lt;/IconButton>
+                  &lt;/Tooltip>
+                &lt;/CardActions>
+                &lt;CardContent className="hero_image">
+                  &lt;img
+                    className="hero_image"
+                    alt={data?.name}
+                    src={data?.image_url}
+                  >&lt;/img>
+                &lt;/CardContent>
+                &lt;CardContent className="hero_name">
+                  &lt;Typography sx={{ fontSize: "1rem", fontWeight: "bold" }}>
+                    {data?.name}
+                  &lt;/Typography>
+                  &lt;span style={{fontSize:".8rem"}}> {`${orderBy?.toLowerCase()} ${data[orderBy]}`}&lt;/span>
+                &lt;/CardContent>
+                &lt;CardActions className="card_actions">
+                  &lt;Tooltip
+                    TransitionComponent={Zoom}
+                    title="view player details"
+                    placement="right-start"
+                  >
+                    &lt;IconButton
+                      onClick={() => {
+                        setSelectedHero(data?.name);
+                        setOpen(true);
+                      }}
+                      data-testid="view player details"
+                      className="eye_icon"
+                    >
+                      &lt;RemoveRedEye
+                        className="icon"
+                        sx={{ color: "#F84982" }}
+                      />
+                    &lt;/IconButton>
+                  &lt;/Tooltip>
+                  &lt;Typography   variant="span">
+                    {checkIsHeroPresent(data?.id) ? 
+                     &lt;Button data-testid="remove" onClick={() => handleRemoveRecord(data?.id)} className="remove_from_watch" variant="outlined">
+                     unwatch
+                   &lt;/Button>
+                    : 
+                    &lt;Button data-testid="add" onClick={() => addHero(data)} className="add_to_watch" variant="outlined">
+                    watch
+                  &lt;/Button>
+                    }
+                   
+                  &lt;/Typography>
+                  &lt;Tooltip
+                    TransitionComponent={Zoom}
+                    title={`Hp ${data?.hp}`}
+                    placement="top"
+                  >
+                    &lt;IconButton>
+                      &lt;img
+                        alt="health"
+                        className="logo health"
+                        src={require("../../assets/heart.png")}
+                      >&lt;/img>
+                    &lt;/IconButton>
+                  &lt;/Tooltip>
+                &lt;/CardActions>
+              &lt;/Card>
+            );
+          })}
+        &lt;/Box>
+      &lt;/Container>
+      &lt;HeroDetails selectedHero={selectedHero} open={open} setOpen={setOpen} />
+      &lt;Box className="footer">
+        &lt;span>Made in 2022 by Vishal Yadav&lt;/span>
+      &lt;/Box>
+    &lt;/Fragment>
+  );
+};
+
+export default HerosList;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#HeroDetails">HeroDetails</a></li><li><a href="global.html#HerosList">HerosList</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#WatchList">WatchList</a></li><li><a href="global.html#getChampion">getChampion</a></li><li><a href="global.html#getListOfChampions">getListOfChampions</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Dec 12 2022 09:34:19 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

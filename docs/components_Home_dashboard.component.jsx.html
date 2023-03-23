@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Home/dashboard.component.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Home/dashboard.component.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Filter, FilterList, Settings } from "@mui/icons-material";
+import {
+  Autocomplete,
+  Box,
+  FormControl,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { getListOfChampions } from "../../utils/api";
+import HerosList from "../Heros List/herosList.component";
+import Navbar from "../Navbar/navbar.component";
+import BasicPopover from "../popover/popover.component";
+import "./dashboard.styles.scss";
+/**
+ * Container component for application components
+ */
+const Dashboard = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  /**
+   * Opens popover at  target element
+   * @param {*} event - target element
+   */
+  const openPopover = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  /**
+   * Close popover at target element
+   */
+  const closePopover = () => {
+    setAnchorEl(null);
+  };
+  const [herosList, setHerosList] = useState([]);
+  const [orderBy, setOrderBy] = useState("hp");
+  const listOfChampions = useLoaderData();
+  const [heroCount, setHeroCount] = useState(listOfChampions?.length);
+  const [options, setOptions] = useState([]);
+  const [filteredHeros, setFilteredHeros] = useState([]);
+  /**
+   * Creates a grouped list  champions based on alphabetical order
+   */
+  const groupHeros = () => {
+    const options = herosList?.map((champion) => {
+      const firstLetter = champion?.name[0].toUpperCase();
+      const selectedAttribute = {
+        name: champion?.name,
+        power: champion[orderBy],
+        image: champion?.image_url,
+      };
+      return {
+        firstLetter,
+        ...selectedAttribute,
+      };
+    });
+    setOptions(options);
+  };
+  const filterHerosBasedOnSearch = (event, value) => {
+    const filteredHeros = herosList.filter((hero) => hero?.name === value);
+    setFilteredHeros(filteredHeros);
+  };
+  /**
+   * Decides how many players to show
+   * @param {*} event - number selected by user
+   */
+  const handleCountChange = async (event) => {
+    if (event) {
+      let heroList;
+      setHeroCount(event?.target?.value);
+      await getListOfChampions(event?.target?.value).then(
+        async (data) => await (heroList = data)
+      );
+      setHerosList(heroList);
+    }
+  };
+  /**
+   * Sort players/ champions based on order selected by user i.e Hp,Armor,AttackDamage
+   */
+  useEffect(() => {
+    const temp = herosList;
+    temp.sort((a, b) => {
+      if (a[orderBy] == b[orderBy]) {
+        return 0;
+      }
+      return a[orderBy] &lt; b[orderBy] ? -1 : 1;
+    });
+    setHerosList([...temp]);
+  }, [orderBy]);
+  /**
+   * Creates and display new list of champions based on user selected count and order
+   */
+  useState(() => {
+    setHerosList(listOfChampions);
+  }, []);
+  return (
+    &lt;Box>
+      &lt;Navbar />
+      &lt;Box display="flex" justifyContent="flex-end" sx={{paddingRight:"4rem"}}>
+        &lt;Autocomplete
+          className="grouped_heros"
+          options={options?.sort(
+            (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
+          )}
+          groupBy={(option) => option?.firstLetter}
+          getOptionLabel={(option) => option.name}
+          renderInput={(params) => (
+            &lt;TextField {...params} label="Search Heros" />
+          )}
+          onOpen={groupHeros}
+          onInputChange={(event, value) =>
+            filterHerosBasedOnSearch(event, value)
+          }
+          renderOption={(props, option) => (
+            &lt;Box
+              component="li"
+              sx={{ "&amp; > img": { mr: 2, flexShrink: 0 } }}
+              {...props}
+            >
+              &lt;img
+                loading="lazy"
+                width="30"
+                src={option?.image}
+                srcSet={option?.image}
+                alt="hero"
+              />
+              {option.name} {option.power}
+            &lt;/Box>
+          )}
+          isOptionEqualToValue={(option, value) => {
+            return option?.name === value?.name ? true : false;
+          }}
+        />
+        &lt;IconButton
+          className="settings_icon"
+          onClick={(event) => openPopover(event)}
+        >
+          &lt;FilterList />
+        &lt;/IconButton>
+      &lt;/Box>
+      &lt;BasicPopover
+        anchorEl={anchorEl}
+        openPopover={openPopover}
+        closePopover={closePopover}
+      >
+        &lt;Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            padding: "1rem",
+            background: "black",
+          }}
+        >
+          &lt;FormControl sx={{ paddingRight: "1rem" }}>
+            &lt;InputLabel id="heros_count">Count&lt;/InputLabel>
+            &lt;Select
+              className="heros_dropdown"
+              labelId="heros_count"
+              label="Count"
+              value={heroCount}
+              onChange={(event) => handleCountChange(event)}
+            >
+              &lt;MenuItem value={5}>5&lt;/MenuItem>
+              &lt;MenuItem value={10}>10&lt;/MenuItem>
+              &lt;MenuItem value={25}>25&lt;/MenuItem>
+              &lt;MenuItem value={50}>50&lt;/MenuItem>
+              &lt;MenuItem value={100}>100&lt;/MenuItem>
+            &lt;/Select>
+          &lt;/FormControl>
+          &lt;FormControl>
+            &lt;InputLabel id="heros_ordering">Order&lt;/InputLabel>
+            &lt;Select
+              className="heros_dropdown"
+              labelId="heros_ordering"
+              label="Order By"
+              value={orderBy}
+              onChange={(event) => setOrderBy(event.target.value)}
+            >
+              &lt;MenuItem value="hp">HP&lt;/MenuItem>
+              &lt;MenuItem value="armor">Armor&lt;/MenuItem>
+              &lt;MenuItem value="attackdamage">Attack damage&lt;/MenuItem>
+            &lt;/Select>
+          &lt;/FormControl>
+        &lt;/Box>
+      &lt;/BasicPopover>
+      &lt;HerosList
+        herosList={filteredHeros?.length > 0 ? filteredHeros : herosList}
+        setHerosList={setHerosList}
+        orderBy={orderBy}
+      />
+    &lt;/Box>
+  );
+};
+
+export default Dashboard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#HeroDetails">HeroDetails</a></li><li><a href="global.html#HerosList">HerosList</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#WatchList">WatchList</a></li><li><a href="global.html#getChampion">getChampion</a></li><li><a href="global.html#getListOfChampions">getListOfChampions</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Dec 12 2022 09:34:19 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

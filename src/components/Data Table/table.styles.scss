@@ -1,0 +1,52 @@
+@import "../../styles/variables.styles.scss";
+
+.MuiBox-root.contaianers {
+  min-height: 100vh;
+ // min-width: 100vw;
+}
+
+.MuiTableContainer-root.table_container {
+  background-color: $secondary;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1ex1afd-MuiTableCell-root {
+  padding: .5rem;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  img {
+    width: 5rem;
+  }
+}
+
+.MuiButtonBase-root.MuiTableSortLabel-root.Mui-active,
+.MuiButtonBase-root.MuiTableSortLabel-root,
+.MuiTableCell-root.MuiTableCell-head,
+.MuiTableCell-root.MuiTableCell-body {
+  color: $neutral;
+}
+.MuiButtonBase-root.MuiTableSortLabel-root:hover,.MuiTableCell-root.MuiTableCell-head:hover{
+color:$neutral;
+.MuiSvgIcon-root{
+color: $neutral;
+}
+}
+.MuiButtonBase-root.MuiTableSortLabel-root.Mui-active{
+  color: $accent;
+  .MuiSvgIcon-root{
+    color: $neutral;
+    }
+}
+.removeButton.MuiButtonBase-root {
+  background: #ffb100;
+  color: #050505;
+}
+.removeButton.MuiButtonBase-root:hover {
+  background: #050505;
+  color: #ffb100;
+}
+.MuiTableCell-root.MuiTableCell-body{
+// text-align: center;
+}

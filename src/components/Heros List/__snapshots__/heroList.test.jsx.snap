@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heros List snapshot 1`] = `
+Array [
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg herosList css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-1177il5"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root hero_list css-bhp9pd-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardActions-root MuiCardActions-spacing card_actions css-1t6e9jv-MuiCardActions-root"
+        >
+          <button
+            aria-label="Armor 24"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <img
+              alt="armor"
+              className="logo armor"
+              src="armor.png"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Damage 52"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <img
+              alt="damage"
+              className="logo damage"
+              src="bandage.png"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <div
+          className="MuiCardContent-root hero_image css-46bh2p-MuiCardContent-root"
+        >
+          <img
+            alt="Zilean"
+            className="hero_image"
+            src="https://cdn.pandascore.co/images/lol/champion/image/0449c26e-f41d-4289-a2bc-32ddb8b3b911.png"
+          />
+        </div>
+        <div
+          className="MuiCardContent-root hero_name css-46bh2p-MuiCardContent-root"
+        >
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-mvvmou-MuiTypography-root"
+          >
+            Zilean
+          </p>
+          <span
+            style={
+              Object {
+                "fontSize": ".8rem",
+              }
+            }
+          >
+             
+            hp 574
+          </span>
+        </div>
+        <div
+          className="MuiCardActions-root MuiCardActions-spacing card_actions css-1t6e9jv-MuiCardActions-root"
+        >
+          <button
+            aria-label="view player details"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium eye_icon css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+            data-mui-internal-clone-element={true}
+            data-testid="view player details"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium icon css-joerfb-MuiSvgIcon-root"
+              data-testid="RemoveRedEyeIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+              />
+            </svg>
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <span
+            className="MuiTypography-root MuiTypography-span css-37jdci-MuiTypography-root"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium add_to_watch css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+              data-testid="add"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              watch
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </span>
+          <button
+            aria-label="Hp 574"
+            aria-labelledby={null}
+            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+            data-mui-internal-clone-element={true}
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <img
+              alt="health"
+              className="logo health"
+              src="heart.png"
+            />
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="footer MuiBox-root css-0"
+  >
+    <span>
+      Made in 2022 by Vishal Yadav
+    </span>
+  </div>,
+]
+`;
