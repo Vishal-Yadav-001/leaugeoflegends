@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React, { Fragment, useContext, useState } from "react";
 import { HerosContext } from "../../context/heroscontext";
-import TableHeader from "./tableHeader.component";
+import TableHeader from "./TableHeader.component";
 import './table.styles.scss'
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {

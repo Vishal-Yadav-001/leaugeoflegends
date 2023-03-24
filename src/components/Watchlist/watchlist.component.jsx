@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React, { useContext } from "react";
 import { HerosContext } from "../../context/heroscontext";
-import TableContent from "../Data Table/tableContent.component";
+import TableContent from "../Data Table/TableContent.component";
 /**
  * Display heroDetails from users watchlist
  * 
