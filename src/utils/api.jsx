@@ -1,7 +1,9 @@
 import axios from "axios";
-
+/**
+ * for local dev use https://api.pandascore.co/lol/champions
+ */
 const API_KEY = "eNraJAvEMOVX0M_d7IfaecVTtJK_QiAXA-_qUL8WJckQX44PZ1U";
-const baseUrl = "https://api.pandascore.co/lol/champions";
+const baseUrl = "/api/";
 
 /**
  * @returns {Array.<Object>} list of heros
